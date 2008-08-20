@@ -1,0 +1,8 @@
+/* -- date times -- */
+.app-datetimerange .datetime { width: 100px; border: 2px solid #eee;}
+.app-datetimerange .datetime .month,
+.app-datetimerange .datetime .month-year { text-align:left; color:#fff; font-size: 100%; background-color: #b94044; padding: 4px 6px;}
+.app-datetimerange .datetime .date { text-align: center; font-weight: bold; font-size: 200%;padding: 9px 4px 2px 4px;}
+.app-datetimerange .datetime .time { text-align: center; font-size: 80%; padding: 2px 4px 9px 4px;}
+.app-datetimerange .datetime .time-part {white-space: nowrap; }
+
