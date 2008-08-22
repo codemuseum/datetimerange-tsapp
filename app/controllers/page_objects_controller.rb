@@ -16,7 +16,6 @@ class PageObjectsController < ApplicationController
   # GET /page_objects/1
   # GET /page_objects/1.xml
   def show
-    logger.debug "PAGE OBJECT FOUND: #{@page_object.inspect}"
     set_html
 
     respond_to do |format|
