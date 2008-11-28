@@ -1,8 +1,18 @@
 /* -- date times -- */
-.app-datetimerange .datetime { width: 100px; border: 2px solid #eee;}
-.app-datetimerange .datetime .month,
-.app-datetimerange .datetime .month-year { text-align:left; color:#fff; font-size: 100%; background-color: #b94044; padding: 4px 6px;}
-.app-datetimerange .datetime .date { text-align: center; font-weight: bold; font-size: 200%;padding: 9px 4px 2px 4px;}
-.app-datetimerange .datetime .time { text-align: center; font-size: 80%; padding: 2px 4px 9px 4px;}
-.app-datetimerange .datetime .time-part {white-space: nowrap; }
+.app-datetime-range .datetime { width: 100px; border: 2px solid #eee;}
+.app-datetime-range .datetime .month,
+.app-datetime-range .datetime .month-year { text-align:left; color:#fff; font-size: 100%; background-color: #b94044; padding: 4px 6px;}
+.app-datetime-range .datetime .date { text-align: center; font-weight: bold; font-size: 200%;padding: 9px 4px 2px 4px;}
+.app-datetime-range .datetime .time { text-align: center; font-size: 80%; padding: 2px 4px 9px 4px;}
+.app-datetime-range .datetime .time-part {white-space: nowrap; }
 
+
+.app-datetime-range .dualtime,
+.app-datetime-range .datetime-box {margin-top: 20px;}
+
+.app-datetime-range .datetime-box .datetime { margin-left: auto; margin-right: auto; text-align: center;}
+
+.app-datetime-range .dualtime {width: 275px; margin-left: auto; margin-right: auto; text-align: center;}
+.app-datetime-range .dualtime .time-split {width: 66px; text-align:center; font-size: 200%;float:left;line-height: 310%;}
+.app-datetime-range .dualtime .first-box {float: left; }
+.app-datetime-range .dualtime .second-box {margin-left:170px; }

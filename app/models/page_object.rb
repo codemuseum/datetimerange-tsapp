@@ -4,7 +4,6 @@ class PageObject < ActiveRecord::Base
   alias_method :original_to_xml, :to_xml
   include ThriveSmartObjectMethods
   
-  
   attr_accessor :starts, :ends
   
   before_validation :parse_dates
@@ -12,7 +11,7 @@ class PageObject < ActiveRecord::Base
   validates_presence_of :starts, :on => :update
   
   def validate
-    if starts && ends && starts > ends
+    if starts && ends && starts_datetime > ends_datetime
       errors.add(:ends, " must be after starting time")
     end
   end
@@ -27,12 +26,13 @@ class PageObject < ActiveRecord::Base
   
   protected
     def parse_dates
-      logger.debug "PARSING DATES!---------"
+      logger.debug "PARSING DATES!--------- // STARTS : #{starts.inspect} // ENDS : #{ends.inspect}"
       old_timezone = Time.zone
       Time.zone = time_zone
       Chronic.time_class = Time.zone
       self.starts_datetime = Chronic.parse(starts)
       self.ends_datetime = Chronic.parse(ends)
       Time.zone = old_timezone
+      logger.debug "FINISHED PARSING DATES!--------- // STARTS : #{starts_datetime.inspect} // ENDS : #{ends_datetime.inspect}"
     end
 end
