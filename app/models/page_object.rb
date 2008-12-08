@@ -17,11 +17,11 @@ class PageObject < ActiveRecord::Base
   end
   
   def starts_at
-    @starts_at ||= starts_datetime && time_zone ? starts_datetime.in_time_zone(time_zone).strftime('%Y-%m-%d %H:%M') : starts_datetime.strftime('%Y-%m-%d %H:%M')
+    @starts_at ||= starts_datetime && time_zone ? starts_datetime.in_time_zone(time_zone).strftime('%Y-%m-%d %H:%M') : (starts_datetime ? starts_datetime.strftime('%Y-%m-%d %H:%M') : nil)
   end
   
   def ends_at
-    @ends_at ||= ends_datetime && time_zone ? ends_datetime.in_time_zone(time_zone).strftime('%Y-%m-%d %H:%M') : ends_datetime.strftime('%Y-%m-%d %H:%M')
+    @ends_at ||= ends_datetime && time_zone ? ends_datetime.in_time_zone(time_zone).strftime('%Y-%m-%d %H:%M') : (ends_datetime ? ends_datetime.strftime('%Y-%m-%d %H:%M') : nil)
   end
   
   def starts
